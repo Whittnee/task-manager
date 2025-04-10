@@ -1,0 +1,77 @@
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.title {
+  font-size: 6.5rem;
+  font-weight: 100;
+  color: rgba(175, 47, 47, 0.15);
+}
+
+.tasksWrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 500px;
+  height: 300px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 1.75%;
+    left: 0.5%;
+    width: 99%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 3.3%;
+    left: 1%;
+    width: 98%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}
+
+.tasks {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.tasksList {
+  overflow: auto;
+  height: 190px;
+  li {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  }
+  li:nth-last-child(1):nth-child(n + 3) {
+    border-bottom: none;
+  }
+}

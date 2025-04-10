@@ -1,0 +1,71 @@
+.task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 0 10px;
+  gap: 20px;
+  height: 60px;
+
+}
+
+.option {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+
+  input {
+    display: none;
+  }
+  
+  &.active {
+    border-color: rgba(3, 162, 3, 0.3);
+    .checkMark {
+      opacity: 1;
+      visibility: visible;
+      
+    }
+  }
+}
+
+.checkMark {
+  opacity: 0;
+  width: 80%;
+  height: 80%;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  color: rgba(3, 162, 3, 0.4)
+}
+
+.description {
+  position: relative;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 300;
+  transition: color 0.3s ease;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 2px;
+    top: 50%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  &.done {
+    color: rgba(0, 0, 0, 0.2);
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.footer {
+  margin-top: auto;
+  height: 50px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 300;
+}
+
+button {
+  background-color: transparent;
+  color: inherit;
+  font-weight: inherit;
+  padding: 3px 5px !important;
+  border-radius: 3px;
+  outline: 1px solid transparent;
+  transition: outline 0.3s ease, color 0.3s ease;
+  &:hover {
+    color: rgba(175, 47, 47, 0.361);
+  }
+  &.active {
+    outline: 1.5px solid rgba(175, 47, 47, 0.15);
+    pointer-events: none;
+    &:hover {
+      color: inherit;
+    }
+  }
+}
+
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px
+}

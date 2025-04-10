@@ -3,12 +3,12 @@ import { TTask } from "../../types/types";
 import { PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-interface ITasksState {
+export interface ITasksState {
   tasks: TTask[];
   view: "all" | "active" | "completed";
 }
 
-const initialState: ITasksState = {
+export const initialState: ITasksState = {
   tasks: [],
   view: "all",
 };

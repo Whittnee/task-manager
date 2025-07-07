@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import tasksReducer from "./slices/tasksSlice"
+import tasksReducer, { persistTasksMiddleware } from "./slices/tasksSlice"
 import {
   useDispatch as dispatchHook,
   useSelector as selectorHook,
@@ -11,7 +11,8 @@ export const rootReducer = combineReducers({
 })
 
 const store = configureStore({
-  reducer: rootReducer
+  reducer: rootReducer,
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(persistTasksMiddleware),
 })
 
 export type RootState = ReturnType<typeof rootReducer>

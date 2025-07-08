@@ -1,12 +1,11 @@
 import { describe, expect, it, test } from "@jest/globals";
-import { TTask } from "../types/types";
 import tasksSlice, {
   addTask,
   changeView,
   clearCompleted,
   completeTask,
-  initialState,
   ITasksState,
+  initialState
 } from "../services/slices/tasksSlice";
 
 describe("Tasks Testing", () => {
